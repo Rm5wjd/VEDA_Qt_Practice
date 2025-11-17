@@ -1,0 +1,36 @@
+{
+	"BUILD_DIR" : "/home/rokgeun/QtProject/MissileCommand/build/Desktop_Qt_6_10_0-Debug/MissileCommand_autogen",
+	"CMAKE_BINARY_DIR" : "/home/rokgeun/QtProject/MissileCommand/build/Desktop_Qt_6_10_0-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/rokgeun/QtProject/MissileCommand/build/Desktop_Qt_6_10_0-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/rokgeun/QtProject/MissileCommand",
+	"CMAKE_SOURCE_DIR" : "/home/rokgeun/QtProject/MissileCommand",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "/home/rokgeun/QtProject/MissileCommand/build/Desktop_Qt_6_10_0-Debug/MissileCommand_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/rokgeun/QtProject/MissileCommand/level.json",
+		"/home/rokgeun/QtProject/MissileCommand/cannon_bottom.png",
+		"/home/rokgeun/QtProject/MissileCommand/building.png",
+		"/home/rokgeun/QtProject/MissileCommand/background.png",
+		"/home/rokgeun/QtProject/MissileCommand/building2.png",
+		"/home/rokgeun/QtProject/MissileCommand/player_rocket.png",
+		"/home/rokgeun/QtProject/MissileCommand/cannon_body.png",
+		"/home/rokgeun/QtProject/MissileCommand/enemy_rocket3.png",
+		"/home/rokgeun/QtProject/MissileCommand/type2.png",
+		"/home/rokgeun/QtProject/MissileCommand/type1.png",
+		"/home/rokgeun/QtProject/MissileCommand/enemy_rocket.png",
+		"/home/rokgeun/QtProject/MissileCommand/enemy_rocket2.png"
+	],
+	"LOCK_FILE" : "/home/rokgeun/QtProject/MissileCommand/build/Desktop_Qt_6_10_0-Debug/CMakeFiles/MissileCommand_autogen.dir/AutoRcc_assets_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "assets" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_assets.cpp",
+	"RCC_EXECUTABLE" : "/home/rokgeun/Qt/6.10.0/gcc_64/libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/rokgeun/QtProject/MissileCommand/build/Desktop_Qt_6_10_0-Debug/CMakeFiles/MissileCommand_autogen.dir/AutoRcc_assets_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/rokgeun/QtProject/MissileCommand/assets.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

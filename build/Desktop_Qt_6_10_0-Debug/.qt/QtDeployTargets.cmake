@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_MissileCommand_FILE /home/rokgeun/QtProject/MissileCommand/build/Desktop_Qt_6_10_0-Debug/MissileCommand)
+set(__QT_DEPLOY_TARGET_MissileCommand_TYPE EXECUTABLE)
