@@ -121,6 +121,14 @@ build CMakeFiles/MissileCommand.dir/explosion.cpp.o: CXX_COMPILER__MissileComman
   OBJECT_DIR = CMakeFiles/MissileCommand.dir
   OBJECT_FILE_DIR = CMakeFiles/MissileCommand.dir
 
+build CMakeFiles/MissileCommand.dir/item.cpp.o: CXX_COMPILER__MissileCommand_unscanned_Debug /home/rokgeun/QtProject/MissileCommand/item.cpp || cmake_object_order_depends_target_MissileCommand
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/MissileCommand.dir/item.cpp.o.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always -fPIC
+  INCLUDES = -I/home/rokgeun/QtProject/MissileCommand/build/Desktop_Qt_6_10_0-Debug/MissileCommand_autogen/include -isystem /home/rokgeun/Qt/6.10.0/gcc_64/include/QtCore -isystem /home/rokgeun/Qt/6.10.0/gcc_64/include -isystem /home/rokgeun/Qt/6.10.0/gcc_64/mkspecs/linux-g++ -isystem /home/rokgeun/Qt/6.10.0/gcc_64/include/QtWidgets -isystem /home/rokgeun/Qt/6.10.0/gcc_64/include/QtGui
+  OBJECT_DIR = CMakeFiles/MissileCommand.dir
+  OBJECT_FILE_DIR = CMakeFiles/MissileCommand.dir
+
 build CMakeFiles/MissileCommand.dir/MissileCommand_autogen/EWIEGA46WW/qrc_assets.cpp.o: CXX_COMPILER__MissileCommand_unscanned_Debug /home/rokgeun/QtProject/MissileCommand/build/Desktop_Qt_6_10_0-Debug/MissileCommand_autogen/EWIEGA46WW/qrc_assets.cpp || cmake_object_order_depends_target_MissileCommand
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/MissileCommand.dir/MissileCommand_autogen/EWIEGA46WW/qrc_assets.cpp.o.d
@@ -137,7 +145,7 @@ build CMakeFiles/MissileCommand.dir/MissileCommand_autogen/EWIEGA46WW/qrc_assets
 #############################################
 # Link the executable MissileCommand
 
-build MissileCommand: CXX_EXECUTABLE_LINKER__MissileCommand_Debug CMakeFiles/MissileCommand.dir/MissileCommand_autogen/mocs_compilation.cpp.o CMakeFiles/MissileCommand.dir/main.cpp.o CMakeFiles/MissileCommand.dir/mainwindow.cpp.o CMakeFiles/MissileCommand.dir/gamewidget.cpp.o CMakeFiles/MissileCommand.dir/levelmanager.cpp.o CMakeFiles/MissileCommand.dir/cannon.cpp.o CMakeFiles/MissileCommand.dir/enemy.cpp.o CMakeFiles/MissileCommand.dir/player.cpp.o CMakeFiles/MissileCommand.dir/explosion.cpp.o CMakeFiles/MissileCommand.dir/MissileCommand_autogen/EWIEGA46WW/qrc_assets.cpp.o | /home/rokgeun/Qt/6.10.0/gcc_64/lib/libQt6Widgets.so.6.10.0 /home/rokgeun/Qt/6.10.0/gcc_64/lib/libQt6Gui.so.6.10.0 /usr/lib64/libGLX.so /usr/lib64/libOpenGL.so /home/rokgeun/Qt/6.10.0/gcc_64/lib/libQt6Core.so.6.10.0 || MissileCommand_autogen MissileCommand_autogen_timestamp_deps
+build MissileCommand: CXX_EXECUTABLE_LINKER__MissileCommand_Debug CMakeFiles/MissileCommand.dir/MissileCommand_autogen/mocs_compilation.cpp.o CMakeFiles/MissileCommand.dir/main.cpp.o CMakeFiles/MissileCommand.dir/mainwindow.cpp.o CMakeFiles/MissileCommand.dir/gamewidget.cpp.o CMakeFiles/MissileCommand.dir/levelmanager.cpp.o CMakeFiles/MissileCommand.dir/cannon.cpp.o CMakeFiles/MissileCommand.dir/enemy.cpp.o CMakeFiles/MissileCommand.dir/player.cpp.o CMakeFiles/MissileCommand.dir/explosion.cpp.o CMakeFiles/MissileCommand.dir/item.cpp.o CMakeFiles/MissileCommand.dir/MissileCommand_autogen/EWIEGA46WW/qrc_assets.cpp.o | /home/rokgeun/Qt/6.10.0/gcc_64/lib/libQt6Widgets.so.6.10.0 /home/rokgeun/Qt/6.10.0/gcc_64/lib/libQt6Gui.so.6.10.0 /usr/lib64/libGLX.so /usr/lib64/libOpenGL.so /home/rokgeun/Qt/6.10.0/gcc_64/lib/libQt6Core.so.6.10.0 || MissileCommand_autogen MissileCommand_autogen_timestamp_deps
   DEP_FILE = CMakeFiles/MissileCommand.dir/link.d
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -Wl,--dependency-file=CMakeFiles/MissileCommand.dir/link.d
@@ -241,7 +249,7 @@ build MissileCommand_autogen/timestamp MissileCommand_autogen/mocs_compilation.c
 #############################################
 # Custom command for MissileCommand_autogen/EWIEGA46WW/qrc_assets.cpp
 
-build MissileCommand_autogen/EWIEGA46WW/qrc_assets.cpp | ${cmake_ninja_workdir}MissileCommand_autogen/EWIEGA46WW/qrc_assets.cpp: CUSTOM_COMMAND /home/rokgeun/QtProject/MissileCommand/assets.qrc CMakeFiles/MissileCommand_autogen.dir/AutoRcc_assets_EWIEGA46WW_Info.json /home/rokgeun/QtProject/MissileCommand/level.json /home/rokgeun/QtProject/MissileCommand/cannon_bottom.png /home/rokgeun/QtProject/MissileCommand/building.png /home/rokgeun/QtProject/MissileCommand/background.png /home/rokgeun/QtProject/MissileCommand/building2.png /home/rokgeun/QtProject/MissileCommand/player_rocket.png /home/rokgeun/QtProject/MissileCommand/cannon_body.png /home/rokgeun/QtProject/MissileCommand/enemy_rocket3.png /home/rokgeun/QtProject/MissileCommand/type2.png /home/rokgeun/QtProject/MissileCommand/type1.png /home/rokgeun/QtProject/MissileCommand/enemy_rocket.png /home/rokgeun/QtProject/MissileCommand/enemy_rocket2.png /home/rokgeun/Qt/6.10.0/gcc_64/libexec/rcc /home/rokgeun/Qt/6.10.0/gcc_64/libexec/rcc || MissileCommand_autogen MissileCommand_autogen_timestamp_deps
+build MissileCommand_autogen/EWIEGA46WW/qrc_assets.cpp | ${cmake_ninja_workdir}MissileCommand_autogen/EWIEGA46WW/qrc_assets.cpp: CUSTOM_COMMAND /home/rokgeun/QtProject/MissileCommand/assets.qrc CMakeFiles/MissileCommand_autogen.dir/AutoRcc_assets_EWIEGA46WW_Info.json /home/rokgeun/QtProject/MissileCommand/level.json /home/rokgeun/QtProject/MissileCommand/cooldown.png /home/rokgeun/QtProject/MissileCommand/range.png /home/rokgeun/QtProject/MissileCommand/cannon_bottom.png /home/rokgeun/QtProject/MissileCommand/building.png /home/rokgeun/QtProject/MissileCommand/background.png /home/rokgeun/QtProject/MissileCommand/building2.png /home/rokgeun/QtProject/MissileCommand/player_rocket.png /home/rokgeun/QtProject/MissileCommand/cannon_body.png /home/rokgeun/QtProject/MissileCommand/type3.png /home/rokgeun/QtProject/MissileCommand/enemy_rocket3.png /home/rokgeun/QtProject/MissileCommand/type2.png /home/rokgeun/QtProject/MissileCommand/type1.png /home/rokgeun/QtProject/MissileCommand/enemy_rocket.png /home/rokgeun/QtProject/MissileCommand/enemy_rocket2.png /home/rokgeun/Qt/6.10.0/gcc_64/libexec/rcc /home/rokgeun/Qt/6.10.0/gcc_64/libexec/rcc || MissileCommand_autogen MissileCommand_autogen_timestamp_deps
   COMMAND = cd /home/rokgeun/QtProject/MissileCommand/build/Desktop_Qt_6_10_0-Debug && /usr/bin/cmake -E cmake_autorcc /home/rokgeun/QtProject/MissileCommand/build/Desktop_Qt_6_10_0-Debug/CMakeFiles/MissileCommand_autogen.dir/AutoRcc_assets_EWIEGA46WW_Info.json Debug
   DESC = Automatic RCC for assets.qrc
   restat = 1

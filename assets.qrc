@@ -4,10 +4,11 @@
     </qresource>
     <qresource prefix="/enemy">
         <file>enemy_rocket.png</file>
-        <file>type1.png</file>
         <file>type2.png</file>
         <file>enemy_rocket2.png</file>
         <file>enemy_rocket3.png</file>
+        <file>type3.png</file>
+        <file>type1.png</file>
     </qresource>
     <qresource prefix="/player">
         <file>cannon_bottom.png</file>
@@ -16,5 +17,9 @@
         <file>background.png</file>
         <file>building2.png</file>
         <file>player_rocket.png</file>
+    </qresource>
+    <qresource prefix="/item">
+        <file>range.png</file>
+        <file>cooldown.png</file>
     </qresource>
 </RCC>

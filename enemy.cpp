@@ -1,7 +1,26 @@
 #include "enemy.h"
 #include <QRandomGenerator>
 
+QPixmap *EnemyMissile::s_img = nullptr;
 // --- (D) EnemyMissile 클래스 구현 ---
+
+QRectF EnemyMissile::getHitbox()
+{
+    // 이미지가 아직 로드 안 됐다면 로드
+    if (s_img == nullptr) {
+        s_img = new QPixmap(":/enemy/enemy_rocket.png");
+        if (s_img->isNull()) qWarning() << "Failed to load enemy_rocket.png";
+    }
+
+    // 이미지의 실제 너비/높이 사용
+    float w = s_img->width();
+    float h = s_img->height();
+    hitbox = QRectF(m_currentPos.x() - w/2, m_currentPos.y() - h/2, w, h);
+
+    // 중심점 기준으로 사각형 계산
+    return hitbox;
+}
+
 void EnemyMissile::update()
 {
     if (!m_isAlive) return;
@@ -9,6 +28,12 @@ void EnemyMissile::update()
     if (hasReachedTarget()) { // 목표 도달 (건물/대포 타격)
         m_isAlive = false;
         // (추후 구현: 타겟(건물/대포)에 데미지 주기)
+    }
+
+    // [추가] 2. 화면 밖으로 나가면 강제 삭제 (안전장치)
+    // Y좌표가 800(화면 아래)을 넘어가거나, 좌우로 너무 멀리 가면 삭제
+    if (m_currentPos.y() > 800 || m_currentPos.x() < -100 || m_currentPos.x() > 1400) {
+        m_isAlive = false;
     }
 }
 
@@ -21,10 +46,9 @@ void EnemyMissile::draw(QPainter* painter)
 {
     if (!m_isAlive) return;
 
-    static QPixmap imgEnemy;
-    if (imgEnemy.isNull()) {
-        imgEnemy.load(":/enemy/enemy_rocket.png");
-        // if (imgEnemy.isNull()) qWarning() << "Failed to load enemy_rocket.png";
+    // 로드는 getHitbox 등에서 처리되지만 안전을 위해 체크
+    if (s_img == nullptr) {
+        s_img = new QPixmap(":/enemy/enemy_rocket.png");
     }
 
     painter->setRenderHint(QPainter::Antialiasing, true);
@@ -55,7 +79,7 @@ void EnemyMissile::draw(QPainter* painter)
 
 
     // --- 2. 적 미사일 이미지 그리기 (회전 적용) ---
-    if (!imgEnemy.isNull())
+    if (s_img && !s_img->isNull())
     {
         painter->save();
 
@@ -69,7 +93,7 @@ void EnemyMissile::draw(QPainter* painter)
 
         float size = 24.0f; // 적 미사일 크기
         painter->setRenderHint(QPainter::SmoothPixmapTransform);
-        painter->drawPixmap(-size/2, -size/2, size, size, imgEnemy);
+        painter->drawPixmap(-size/2, -size/2, size, size, *s_img);
 
         painter->restore();
     }
@@ -113,7 +137,7 @@ Enemy::Enemy(Type type, int gameWidth, int gameHeight) : m_type(type)
     else if (m_type == BOSS_3WAY) {
         m_pos = QPointF(gameWidth / 2, 80);
         m_velocity = QVector2D(0, 0);
-        m_fireInterval = 1000;
+        m_fireInterval = 6000;
         m_hp = 10;
 
         if (s_imgType2 && !s_imgType2->isNull()) {
@@ -137,8 +161,6 @@ Enemy::Enemy(Type type, int gameWidth, int gameHeight) : m_type(type)
 
 QList<EnemyMissile> Enemy::update(int deltaTimeMs)
 {
-    // ... (기존 코드와 동일, 변경 없음) ...
-    // update 함수는 이미지 변수를 직접 안 쓰므로 그대로 두셔도 됩니다.
     QList<EnemyMissile> newMissiles;
     if (!m_isAlive) return newMissiles;
 
@@ -171,7 +193,7 @@ QList<EnemyMissile> Enemy::update(int deltaTimeMs)
                 QPointF dirPoint = vecLine.p2();
                 m.m_direction = QVector2D(dirPoint).normalized();
                 m.m_targetPos = m_pos + (dirPoint * 1000);
-                m.m_speed = 6.0f;
+                m.m_speed = 5.0f;
                 m.m_isAlive = true;
                 newMissiles.append(m);
             }
@@ -179,7 +201,8 @@ QList<EnemyMissile> Enemy::update(int deltaTimeMs)
     }
     // --- [타입 3] 5갈래 폭격기 (1회성) ---
     else if (m_type == BOMBER_BURST) {
-        if (!m_hasFired && m_pos.x() > 200 && m_pos.x() < 1080) {
+        if (!m_hasFired && m_pos.x() > 200 && m_pos.x() < 800) {
+            qDebug() << "x: " << m_pos.x();
             m_hasFired = true;
             float angles[] = { -10.0f, -5.0f, 0.0f, 5.0f, 10.0f };
             for (float deg : angles) {
@@ -190,7 +213,7 @@ QList<EnemyMissile> Enemy::update(int deltaTimeMs)
                 QPointF dirPoint = vecLine.p2();
                 m.m_direction = QVector2D(dirPoint).normalized();
                 m.m_targetPos = m_pos + (dirPoint * 1000);
-                m.m_speed = 4.0f;
+                m.m_speed = 2.0f;
                 m.m_isAlive = true;
                 newMissiles.append(m);
             }

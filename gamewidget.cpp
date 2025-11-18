@@ -14,7 +14,7 @@ const float ENEMY_MISSILE_SPEED = 2.0f;
 GameWidget::GameWidget(QWidget *parent)
     : QWidget(parent)
 {
-    setFixedSize(800, 600);
+    setFixedSize(1024, 800);
     setMouseTracking(true);
     setCursor(Qt::BlankCursor);
 
@@ -112,20 +112,48 @@ void GameWidget::updateGameLogic()
     for (PlayerProjectile &p : m_projectiles) {
         p.update();
         if (!p.m_isAlive) {
+            // 아이템 효과 체크
+            float radius = m_stats.m_explosionMaxRadius;
+            if (m_timerBigBoom > 0) radius *= 3.0f; // 2.5배 뻥튀기!
+
             // 포탄이 목표에 도달 -> 폭발 생성
             m_explosions.append(Explosion(
                 p.m_targetPos,
-                m_stats.m_explosionMaxRadius,
+                radius,
                 m_stats.m_explosionGrowthRate
                 ));
         }
     }
+
+
     for (Explosion &e : m_explosions) {
         e.update();
+    }
+    for (Enemy &e : m_enemies) {
+        // 스페셜 에너미 확인
+        QList<EnemyMissile> spawnedMissiles = e.update(dt);
+
+        // 3. 적이 낳은 미사일들을 메인 미사일 리스트에 합류
+        if (!spawnedMissiles.isEmpty()) {
+            m_enemyMissiles.append(spawnedMissiles);
+        }
     }
     for (EnemyMissile &em : m_enemyMissiles) {
         em.update();
     }
+
+    // 1. 아이템 스폰 및 업데이트
+    spawnItems();
+    for (Item &item : m_items) item.update();
+    m_items.removeIf([](const Item& i){ return !i.isAlive(); });
+
+    // 2. 플로팅 텍스트 업데이트
+    for (FloatingText &ft : m_floatingTexts) ft.update();
+    m_floatingTexts.removeIf([](const FloatingText& ft){ return ft.lifeTime <= 0; });
+
+    // 3. 아이템 효과 시간 감소
+    if (m_timerBigBoom > 0) m_timerBigBoom -= dt;
+    if (m_timerRapidFire > 0) m_timerRapidFire -= dt;
 
     // 3. 충돌 검사
     checkCollisions();
@@ -133,79 +161,12 @@ void GameWidget::updateGameLogic()
     // 4. 죽은 객체 제거
     cleanupObjects();
 
+    // --- 게임 오버 체크 ---
+    checkGameOver();
+
     // 5. 화면 갱신 요청
     this->update();
 }
-
-/**
-void GameWidget::spawnEnemies()
-{
-    // 1. 현재 웨이브의 물량을 다 쏟아냈는지 확인
-    if (m_levelManager.isWaveFinished())
-    {
-        // 물량은 다 나왔는데, 화면에 아직 적이 남아있다면? -> 다 죽일 때까지 대기
-        if (!m_enemyMissiles.isEmpty()) {
-            return;
-        }
-
-        // 화면도 깨끗해졌다면? -> 다음 웨이브 시작 (레벨 업!)
-        m_levelManager.nextWave();
-
-        // (선택 사항) 여기서 "Level 2 Start!" 같은 텍스트를 띄우는 함수 호출 가능
-        qDebug() << "Next Wave Started! Level:" << m_levelManager.getCurrentLevelIndex();
-        return;
-    }
-
-    // 2. 스폰 타이밍 체크
-    qint64 now = m_gameClock.elapsed();
-    if (now < m_nextEnemySpawnTime) {
-        return; // 아직 때가 아님
-    }
-
-    // 3. 레벨 매니저에서 현재 웨이브 데이터 가져오기
-    const WaveData& currentWave = m_levelManager.getCurrentWave();
-
-    // 다음 스폰 시간 설정 (초 단위이므로 * 1000)
-    // 약간의 랜덤성을 주어 기계적인 느낌 제거 (0.8배 ~ 1.2배)
-    float randomFactor = 0.8f + (static_cast<float>(rand()) / RAND_MAX) * 0.4f;
-    m_nextEnemySpawnTime = now + (currentWave.spawnInterval * 1000 * randomFactor);
-
-
-    // 4. 적 객체 생성 부분 수정
-    EnemyMissile em;
-    em.m_startPos = QPointF(rand() % width(), 0);
-    em.m_currentPos = em.m_startPos;
-
-    // [타겟 선정 로직 개선]
-    // 살아있는 건물과 대포 리스트를 취합
-    QVector<QPointF> validTargets;
-
-    // 살아있는 건물 위치 추가
-    for (const Building& b : m_buildings) {
-        if (!b.m_isDestroyed) validTargets.append(b.getCenter());
-    }
-    // 살아있는 대포 위치 추가
-    for (const Cannon& c : m_cannons) {
-        if (!c.m_isDestroyed) validTargets.append(c.m_hitbox.center());
-    }
-
-    if (!validTargets.isEmpty()) {
-        // 유효한 타겟 중 랜덤 선택
-        int idx = rand() % validTargets.size();
-        em.m_targetPos = validTargets[idx];
-    } else {
-        // 다 파괴됐으면 그냥 화면 바닥 아무데나
-        em.m_targetPos = QPointF(rand() % width(), height());
-    }
-
-    em.m_direction = QVector2D(em.m_targetPos - em.m_startPos).normalized();
-    em.m_speed = currentWave.missileSpeed;
-    em.m_isAlive = true;
-
-    m_enemyMissiles.append(em);
-    m_levelManager.decreaseEnemyCount();
-}
-**/
 
 void GameWidget::spawnEnemies()
 {
@@ -215,9 +176,14 @@ void GameWidget::spawnEnemies()
     {
         if (m_enemyMissiles.isEmpty() && m_enemies.isEmpty()) {
             m_levelManager.nextWave();
-            // (선택) qDebug() << "Wave Started:" << m_levelManager.getCurrentLevelIndex();
+            qDebug() << "Wave Started:" << m_levelManager.getCurrentLevelIndex();
         }
+        qDebug() << "object not clean!";
         return;
+    }
+    else {
+        qDebug() << "wave index: " << m_levelManager.getCurrentWave().levelIndex;
+        qDebug() << "remaining enemy: " << m_levelManager.getCurrentWave().totalEnemies;
     }
 
     // 2. 스폰 타이밍 체크
@@ -241,7 +207,7 @@ void GameWidget::spawnEnemies()
     // 특수 적(비행기) 물량이 남아있다면?
     if (m_levelManager.getRemainingSpecialEnemies() > 0) {
         // 20% 확률로 비행기 출격 (확률은 조절 가능)
-        if (rand() % 100 < 20) {
+        if (rand() % 100 < 40) {
             spawnSpecial = true;
         }
     }
@@ -251,6 +217,7 @@ void GameWidget::spawnEnemies()
         // -------------------------------------------------
         // [A] 적 기체(Enemy) 소환
         // -------------------------------------------------
+        qDebug() << "spawn special enemy!";
         int typeRoll = rand() % 3;
         Enemy::Type type = Enemy::BOMBER_V; // 기본
 
@@ -269,6 +236,7 @@ void GameWidget::spawnEnemies()
         // -------------------------------------------------
         // [B] 일반 미사일(EnemyMissile) 소환 (기존 코드)
         // -------------------------------------------------
+        qDebug() << "spawn missile!";
         EnemyMissile em;
         em.m_startPos = QPointF(rand() % width(), 0);
         em.m_currentPos = em.m_startPos;
@@ -312,18 +280,86 @@ void GameWidget::checkCollisions()
         // 폭발 반경의 제곱 (sqrt 연산 방지)
         float radiusSq = exp.currentRadius() * exp.currentRadius();
 
+        // 미사일
         for (EnemyMissile &enemy : m_enemyMissiles)
         {
             if (!enemy.m_isAlive) continue;
 
-            // 적 미사일 위치(점)와 폭발 중심(원) 사이의 거리 제곱
-            float distSq = QVector2D(exp.center() - enemy.getHitboxCenter()).lengthSquared();
+            // [수정] 1. 미사일의 사각형 히트박스 가져오기
+            QRectF box = enemy.getHitbox();
 
-            if (distSq <= radiusSq)
+            // [수정] 2. 폭발 중심과 사각형 영역 내 가장 가까운 점(Closest Point) 찾기
+            // qBound(min, val, max): 폭발 중심 좌표를 사각형 범위 안으로 클램핑
+            float closestX = qBound(box.left(), exp.center().x(), box.right());
+            float closestY = qBound(box.top(), exp.center().y(), box.bottom());
+
+            // [수정] 3. 거리 벡터 계산 (폭발 중심 - 가장 가까운 점)
+            QVector2D distVec(exp.center().x() - closestX, exp.center().y() - closestY);
+
+            // [수정] 4. 거리 제곱 비교 (반지름보다 가까우면 충돌)
+            if (distVec.lengthSquared() <= radiusSq)
             {
                 // 충돌!
                 enemy.m_isAlive = false;
-                // (추후 구현: 점수 획득)
+
+                // 점수 획득
+                m_score += 20;
+
+                // (선택사항) 미사일 터지는 작은 이펙트 추가 가능
+                // m_explosions.append(Explosion(enemy.m_currentPos, 15.0f, 3.0f));
+            }
+        }
+
+        // 스페셜 에너미 충돌
+        for (Enemy &sem : m_enemies)
+        {
+            if (!sem.m_isAlive) continue;
+
+            // [1] 적의 히트박스(사각형) 가져오기
+            QRectF box = sem.getHitbox();
+
+            // [2] 원(폭발)의 중심에서 사각형 영역 내 가장 가까운 점(Closest Point) 찾기
+            // qBound(min, val, max)는 val을 min과 max 사이의 값으로 잘라줍니다.
+            float closestX = qBound(box.left(), exp.center().x(), box.right());
+            float closestY = qBound(box.top(), exp.center().y(), box.bottom());
+
+            // [3] 가장 가까운 점과 폭발 중심 사이의 거리(벡터) 구하기
+            QVector2D distVec(exp.center().x() - closestX, exp.center().y() - closestY);
+
+            // [4] 거리 제곱이 폭발 반경 제곱보다 작으면 닿은 것!
+            if (distVec.lengthSquared() <= radiusSq)
+            {
+                sem.takeHit(); // 체력 감소
+
+                // (옵션) 적이 죽었을 때 점수 추가
+                if (!sem.m_isAlive) {
+                    m_score += (sem.m_type == Enemy::BOSS_3WAY) ? 500 : 100;
+                    // 적이 터지는 이펙트 추가 (기체 위치에 폭발 생성)
+                    m_explosions.append(Explosion(sem.m_pos, 40.0f, 3.0f));
+                }
+            }
+        }
+
+        // 아이템 충돌
+        for (Item &item : m_items) {
+            if (!item.isAlive()) continue;
+
+            // 1. 아이템의 사각형 히트박스 가져오기
+            QRectF box = item.getHitbox();
+
+            // 2. 폭발 중심(Circle Center)과 사각형 영역 내 가장 가까운 점(Closest Point) 찾기
+            // qBound: 폭발 중심 좌표를 사각형의 left~right, top~bottom 범위 안으로 자릅니다.
+            // 만약 중심이 사각형 안에 있다면 closestX/Y는 중심과 같아집니다 (거리 0).
+            qreal closestX = qBound(box.left(), exp.center().x(), box.right());
+            qreal closestY = qBound(box.top(), exp.center().y(), box.bottom());
+
+            // 3. 거리 벡터 계산 (폭발 중심 - 가장 가까운 점)
+            QVector2D distVec(exp.center().x() - closestX, exp.center().y() - closestY);
+
+            // 4. 거리 제곱 비교 (충돌 판정)
+            if (distVec.lengthSquared() <= radiusSq) {
+                item.setDead(); // 아이템 삭제
+                activateItemEffect(item.getType(), item.getPos()); // 효과 발동!
             }
         }
     }
@@ -356,6 +392,11 @@ void GameWidget::checkCollisions()
             }
         }
     }
+
+    // 3. 아이템
+    for (Explosion &exp : m_explosions) {
+
+    }
 }
 
 void GameWidget::cleanupObjects()
@@ -364,6 +405,7 @@ void GameWidget::cleanupObjects()
     m_projectiles.removeIf([](const PlayerProjectile &p){ return !p.m_isAlive; });
     m_explosions.removeIf([](const Explosion &e){ return !e.isAlive(); });
     m_enemyMissiles.removeIf([](const EnemyMissile &em){ return !em.m_isAlive; });
+    m_enemies.removeIf([](const Enemy& sem){return !sem.m_isAlive; });
 }
 
 void GameWidget::mousePressEvent(QMouseEvent *event)
@@ -375,7 +417,15 @@ void GameWidget::mousePressEvent(QMouseEvent *event)
 
     // 1. 발사할 최적의 대포 찾기
     //    (거리, 생존 여부, 쿨타임까지 모두 고려해서 1개만 딱 골라옴)
-    Cannon* cannonToFire = getCannonToFire(targetPos);
+    //Cannon* cannonToFire = getCannonToFire(targetPo);
+
+
+    // 1. 쿨타임 결정 (아이템 먹었으면 50ms, 아니면 기본값)
+    int currentCooldown = (m_timerRapidFire > 0) ? 100 : m_stats.m_cannonCooldownMs;
+
+    // canFire 호출 시 currentCooldown 사용
+    Cannon* cannonToFire = getCannonToFire(targetPos, currentCooldown); // <--- 수정 필요
+
 
     // 쏠 수 있는 대포가 없으면 무시 (먹통)
     if (!cannonToFire) return;
@@ -397,7 +447,7 @@ void GameWidget::mousePressEvent(QMouseEvent *event)
     m_projectiles.append(p);
 }
 
-Cannon* GameWidget::getCannonToFire(QPointF targetPos)
+Cannon* GameWidget::getCannonToFire(QPointF targetPos, int cooldown)
 {
     Cannon* bestCannon = nullptr;
     float minDistSq = FLT_MAX; // 무한대 값으로 초기화
@@ -413,7 +463,7 @@ Cannon* GameWidget::getCannonToFire(QPointF targetPos)
 
         // 2. 쿨타임 중인 대포도 후보에서 제외 (더블 클릭 발사 문제 해결)
         //    (가까운 애가 쿨타임이면, 조금 멀어도 준비된 다른 애가 대신 쏨)
-        if (!c.canFire(now, m_stats.m_cannonCooldownMs)) continue;
+        if (!c.canFire(now, cooldown)) continue;
 
         // 3. 거리 계산 (거리의 제곱 비교)
         //    대포 히트박스 중심 ~ 마우스 클릭 위치 거리
@@ -464,6 +514,11 @@ void GameWidget::paintEvent(QPaintEvent *event)
         em.draw(&painter);
     }
 
+    // 3-1. 스페셜 에너미 그리기
+    for (Enemy &sem : m_enemies) {
+        sem.draw(&painter);
+    }
+
     // 4. 아군 포탄 그리기
     for (PlayerProjectile &p : m_projectiles) {
         p.draw(&painter);
@@ -474,8 +529,131 @@ void GameWidget::paintEvent(QPaintEvent *event)
         e.draw(&painter);
     }
 
+    // =========================================================
+    // [UI] 점수 표시 (화면 중앙 상단)
+    // =========================================================
+    painter.save(); // 폰트 설정을 위해 저장
+
+    // 1. 폰트 설정 (크고 굵게)
+    QFont scoreFont("Verdana", 24, QFont::Bold); // 폰트는 취향껏 변경 가능
+    scoreFont.setLetterSpacing(QFont::AbsoluteSpacing, 2); // 자간을 살짝 넓혀서 멋있게
+    painter.setFont(scoreFont);
+
+    // 2. 그릴 텍스트 준비
+    QString scoreText = QString("SCORE: %1").arg(m_score);
+
+    // 3. 위치 계산 (중앙 정렬)
+    QFontMetrics fm(scoreFont);
+    int textWidth = fm.horizontalAdvance(scoreText);
+    int textHeight = fm.height(); // 텍스트 높이 (Ascent + Descent)
+
+    int x = (width() - textWidth) / 2; // 화면 정중앙 X
+    int y = 50; // 화면 상단에서 50px 내려온 위치 (Baseline 기준)
+
+    // 4. [그림자 효과] 검은색으로 살짝 빗겨서 먼저 그림 (가독성 UP)
+    painter.setPen(QColor(0, 0, 0, 180)); // 반투명 검정
+    painter.drawText(x + 3, y + 3, scoreText);
+
+    // 5. [본문] 흰색(또는 네온색)으로 위에 덮어쓰기
+    painter.setPen(Qt::white); // 깔끔한 흰색
+    // painter.setPen(QColor(0, 255, 255)); // 원하면 사이버펑크 시안(Cyan) 색상 추천
+    painter.drawText(x, y, scoreText);
+
+    painter.restore(); // 설정 복구
+
+    // =========================================================
+
+
     // 6. 십자선 그리기
     painter.setPen(QPen(Qt::white, 1));
     painter.drawLine(m_mousePos.x() - 10, m_mousePos.y(), m_mousePos.x() + 10, m_mousePos.y());
     painter.drawLine(m_mousePos.x(), m_mousePos.y() - 10, m_mousePos.x(), m_mousePos.y() + 10);
+
+    // 1. 아이템 그리기
+    for (Item &item : m_items) item.draw(&painter);
+
+    // 2. 플로팅 텍스트 그리기 (페이드 아웃 효과)
+    for (const FloatingText &ft : m_floatingTexts) {
+        painter.setPen(ft.color);
+        QFont font = painter.font();
+        font.setBold(true);
+        font.setPointSize(16);
+        painter.setFont(font);
+
+        // 투명도 적용
+        int alpha = static_cast<int>(255 * (ft.lifeTime / 60.0f));
+        QColor c = ft.color;
+        c.setAlpha(alpha);
+        painter.setPen(c);
+
+        painter.drawText(ft.pos, ft.text);
+    }
+
+    // 3. [UI] 남은 시간 표시 (좌측 상단)
+    int uiY = 30;
+    QFont uiFont("Arial", 14, QFont::Bold);
+    painter.setFont(uiFont);
+
+    if (m_timerBigBoom > 0) {
+        painter.setPen(Qt::yellow);
+        painter.drawText(20, uiY, QString("BIG BOOM: %1s").arg(m_timerBigBoom / 1000.0, 0, 'f', 1));
+        uiY += 30;
+    }
+    if (m_timerRapidFire > 0) {
+        painter.setPen(Qt::cyan);
+        painter.drawText(20, uiY, QString("RAPID FIRE: %1s").arg(m_timerRapidFire / 1000.0, 0, 'f', 1));
+    }
+}
+
+void GameWidget::checkGameOver()
+{
+    bool isAllDestroyed = true;
+
+    // 건물 6개를 확인
+    for (const Building &b : m_buildings) {
+        if (!b.m_isDestroyed) {
+            isAllDestroyed = false; // 살아있는 게 하나라도 있으면 게임 오버 아님
+            break;
+        }
+    }
+
+    if (isAllDestroyed) {
+        // 1. 게임 루프 정지 (중요)
+        m_gameTimer->stop();
+
+        // 2. 디버깅 메시지
+        qDebug() << "GAME OVER! Score:" << m_score;
+
+        // 3. 메인 윈도우에 알림 (UI 전환용 시그널)
+        // gamewidget.h에 signals: void gameFinished(int score); 가 선언되어 있어야 함
+        emit gameFinished(m_score);
+    }
+}
+
+void GameWidget::spawnItems()
+{
+    // 1% 확률로 아이템 등장 (빈도 조절 가능)
+    if (rand() % 1000 < 5) {
+        Item::Type type = (rand() % 2 == 0) ? Item::BigBoom : Item::RapidFire;
+        m_items.append(Item(type, width()));
+    }
+}
+
+void GameWidget::activateItemEffect(Item::Type type, QPointF pos)
+{
+    QString msg;
+    QColor color;
+
+    if (type == Item::BigBoom) {
+        m_timerBigBoom = ITEM_DURATION_MS; // 시간 갱신 (10초)
+        msg = "BIG BOOM!";
+        color = Qt::yellow;
+    } else {
+        m_timerRapidFire = ITEM_DURATION_MS; // 시간 갱신 (10초)
+        msg = "RAPID FIRE!";
+        color = Qt::cyan;
+    }
+
+    // 플로팅 텍스트 생성
+    m_floatingTexts.append({ pos, msg, color, 60 }); // 60프레임 유지
 }

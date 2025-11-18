@@ -24,7 +24,7 @@ void Explosion::draw(QPainter* painter)
 {
     if (!m_isAlive) return;
 
-    painter->setRenderHint(QPainter::Antialiasing, true);
+    //painter->setRenderHint(QPainter::Antialiasing, true);
 
     float progress = m_currentRadius / m_maxRadius;
 

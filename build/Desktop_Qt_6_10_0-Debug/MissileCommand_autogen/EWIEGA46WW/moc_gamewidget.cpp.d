@@ -219,6 +219,7 @@
   /home/rokgeun/QtProject/MissileCommand/cannon.h \
   /home/rokgeun/QtProject/MissileCommand/enemy.h \
   /home/rokgeun/QtProject/MissileCommand/explosion.h \
+  /home/rokgeun/QtProject/MissileCommand/item.h \
   /home/rokgeun/QtProject/MissileCommand/levelmanager.h \
   /home/rokgeun/QtProject/MissileCommand/player.h \
   /usr/include/alloca.h \

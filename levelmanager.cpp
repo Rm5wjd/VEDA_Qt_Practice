@@ -54,6 +54,7 @@ bool LevelManager::loadLevelsFromFile(const QString& filePath)
     qDebug() << "Levels loaded:" << m_waves.size();
 
     // 첫 번째 웨이브 로드
+    // todo:
     if (!m_waves.isEmpty()) {
         m_currentWaveIndex = 4;
         m_currentWaveData = m_waves[4];

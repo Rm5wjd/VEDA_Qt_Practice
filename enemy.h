@@ -9,17 +9,21 @@
 // (D) 적군 객체 클래스
 struct EnemyMissile
 {
+    static QPixmap *s_img;
+
     QPointF m_startPos;
     QPointF m_currentPos;
     QPointF m_targetPos;
     QVector2D m_direction;
+    QRectF hitbox;
     float m_speed;
     bool m_isAlive = true;
 
     void update();
     bool hasReachedTarget();
     void draw(QPainter* painter);
-    QPointF getHitboxCenter() const { return m_currentPos; } // 단순화를 위해 점으로 판정
+    QPointF getHitboxCenter() const { return m_currentPos; } // 단순화를 위해 점으로 판
+    QRectF getHitbox();
 };
 
 class Enemy

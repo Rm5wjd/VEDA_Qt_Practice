@@ -10,12 +10,15 @@
 	"INPUTS" : 
 	[
 		"/home/rokgeun/QtProject/MissileCommand/level.json",
+		"/home/rokgeun/QtProject/MissileCommand/cooldown.png",
+		"/home/rokgeun/QtProject/MissileCommand/range.png",
 		"/home/rokgeun/QtProject/MissileCommand/cannon_bottom.png",
 		"/home/rokgeun/QtProject/MissileCommand/building.png",
 		"/home/rokgeun/QtProject/MissileCommand/background.png",
 		"/home/rokgeun/QtProject/MissileCommand/building2.png",
 		"/home/rokgeun/QtProject/MissileCommand/player_rocket.png",
 		"/home/rokgeun/QtProject/MissileCommand/cannon_body.png",
+		"/home/rokgeun/QtProject/MissileCommand/type3.png",
 		"/home/rokgeun/QtProject/MissileCommand/enemy_rocket3.png",
 		"/home/rokgeun/QtProject/MissileCommand/type2.png",
 		"/home/rokgeun/QtProject/MissileCommand/type1.png",
