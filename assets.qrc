@@ -3,23 +3,23 @@
         <file>level.json</file>
     </qresource>
     <qresource prefix="/enemy">
-        <file>enemy_rocket.png</file>
-        <file>type2.png</file>
-        <file>enemy_rocket2.png</file>
-        <file>enemy_rocket3.png</file>
-        <file>type3.png</file>
-        <file>type1.png</file>
+        <file alias="enemy_rocket.png">assets/enemy_rocket.png</file>
+        <file alias="type2.png">assets/type2.png</file>
+        <file alias="enemy_rocket2.png">assets/enemy_rocket2.png</file>
+        <file alias="enemy_rocket3.png">assets/enemy_rocket3.png</file>
+        <file alias="type3.png">assets/type3.png</file>
+        <file alias="type1.png">assets/type1.png</file>
     </qresource>
     <qresource prefix="/player">
-        <file>cannon_bottom.png</file>
-        <file>cannon_body.png</file>
-        <file>building.png</file>
-        <file>background.png</file>
-        <file>building2.png</file>
-        <file>player_rocket.png</file>
+        <file alias="cannon_bottom.png">assets/cannon_bottom.png</file>
+        <file alias="cannon_body.png">assets/cannon_body.png</file>
+        <file alias="building.png">assets/building.png</file>
+        <file alias="background.png">assets/background.png</file>
+        <file alias="building2.png">assets/building2.png</file>
+        <file alias="player_rocket.png">assets/player_rocket.png</file>
     </qresource>
     <qresource prefix="/item">
-        <file>range.png</file>
-        <file>cooldown.png</file>
+        <file alias="range.png">assets/range.png</file>
+        <file alias="cooldown.png">assets/cooldown.png</file>
     </qresource>
 </RCC>

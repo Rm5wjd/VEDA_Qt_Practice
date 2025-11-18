@@ -13,26 +13,43 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
+include_directories(include)
+
 set(PROJECT_SOURCES
-        main.cpp
-        mainwindow.cpp
-        mainwindow.h
+        # main
+        src/main.cpp
+
+        # src/
+        src/cannon.cpp
+        src/enemy.cpp
+        src/explosion.cpp
+        src/gamewidget.cpp
+        src/item.cpp
+        src/levelmanager.cpp
+        src/mainwindow.cpp
+        src/player.cpp
+
+        # include/
+        include/cannon.h
+        include/enemy.h
+        include/explosion.h
+        include/gamewidget.h
+        include/item.h
+        include/levelmanager.h
+        include/mainwindow.h
+        include/player.h
+
+        # ui
         mainwindow.ui
+
+        # qrc
+        assets.qrc
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(MissileCommand
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        gamewidget.h gamewidget.cpp
-        levelmanager.h levelmanager.cpp
-        assets.qrc
-        level.json
-        cannon.h cannon.cpp
-        enemy.h enemy.cpp
-        player.h player.cpp
-        explosion.h explosion.cpp
-        item.h item.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET MissileCommand APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -67,6 +84,7 @@ set_target_properties(MissileCommand PROPERTIES
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
+    AUTOUIC_SEARCH_PATHS "${CMAKE_CURRENT_SOURCE_DIR}/"
 )
 
 include(GNUInstallDirs)
