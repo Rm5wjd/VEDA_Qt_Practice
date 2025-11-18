@@ -12,35 +12,55 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(Qt6 REQUIRED COMPONENTS Widgets Sql)
 
 include_directories(include)
 
 set(PROJECT_SOURCES
         # main
         src/main.cpp
-
-        # src/
-        src/cannon.cpp
-        src/enemy.cpp
-        src/explosion.cpp
-        src/gamewidget.cpp
-        src/item.cpp
-        src/levelmanager.cpp
         src/mainwindow.cpp
-        src/player.cpp
 
-        # include/
-        include/cannon.h
-        include/enemy.h
-        include/explosion.h
-        include/gamewidget.h
-        include/item.h
-        include/levelmanager.h
+        # src/game
+        src/game/cannon.cpp
+        src/game/enemy.cpp
+        src/game/explosion.cpp
+        src/game/gamewidget.cpp
+        src/game/item.cpp
+        src/game/levelmanager.cpp
+        src/game/player.cpp
+
+        # src/UI
+        src/UI/loginwidget.cpp
+        src/UI/mainmenuwidget.cpp
+        src/UI/mypagewidget.cpp
+        src/UI/rankingwidget.cpp
+        src/UI/signupwidget.cpp
+        src/UI/widget.cpp
+
+
+        # include/game
+        include/game/cannon.h
+        include/game/enemy.h
+        include/game/explosion.h
+        include/game/gamewidget.h
+        include/game/item.h
+        include/game/levelmanager.h
+        include/game/player.h
+
+        # include/UI
+        include/UI/loginwidget.h
+        include/UI/mainmenuwidget.h
+        include/UI/mypagewidget.h
+        include/UI/rankingwidget.h
+        include/UI/signupwidget.h
+        include/UI/widget.h
+
         include/mainwindow.h
-        include/player.h
 
         # ui
         mainwindow.ui
+        gameOver.ui
 
         # qrc
         assets.qrc
@@ -71,6 +91,7 @@ endif()
 
 target_link_libraries(MissileCommand PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(MissileCommand PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(MissileCommand PRIVATE Qt6::Widgets Qt6::Sql)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

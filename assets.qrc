@@ -22,4 +22,7 @@
         <file alias="range.png">assets/range.png</file>
         <file alias="cooldown.png">assets/cooldown.png</file>
     </qresource>
+    <qresource prefix="/UI">
+        <file>background_UI.jpg</file>
+    </qresource>
 </RCC>

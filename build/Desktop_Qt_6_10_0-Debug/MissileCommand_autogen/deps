@@ -1,4 +1,5 @@
 MissileCommand_autogen/timestamp: \
+	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtCore/QCryptographicHash \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtCore/QDebug \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtCore/QElapsedTimer \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtCore/QJsonObject \
@@ -54,6 +55,7 @@ MissileCommand_autogen/timestamp: \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtCore/qcoreapplication.h \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtCore/qcoreapplication_platform.h \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtCore/qcoreevent.h \
+	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtCore/qcryptographichash.h \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtCore/qdarwinhelpers.h \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtCore/qdatastream.h \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtCore/qdatetime.h \
@@ -91,6 +93,7 @@ MissileCommand_autogen/timestamp: \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtCore/qmargins.h \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtCore/qmath.h \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtCore/qmetacontainer.h \
+	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtCore/qmetaobject.h \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtCore/qmetatype.h \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtCore/qminmax.h \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtCore/qnamespace.h \
@@ -168,6 +171,7 @@ MissileCommand_autogen/timestamp: \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtGui/QPainter \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtGui/QPen \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtGui/QPixmap \
+	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtGui/QResizeEvent \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtGui/QTransform \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtGui/QVector2D \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtGui/qaction.h \
@@ -209,9 +213,22 @@ MissileCommand_autogen/timestamp: \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtGui/qvector2d.h \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtGui/qvectornd.h \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtGui/qwindowdefs.h \
+	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtSql/QSqlDatabase \
+	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtSql/QSqlError \
+	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtSql/QSqlQuery \
+	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtSql/qsqldatabase.h \
+	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtSql/qsqlerror.h \
+	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtSql/qsqlquery.h \
+	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtSql/qtsql-config.h \
+	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtSql/qtsqlexports.h \
+	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtSql/qtsqlglobal.h \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtWidgets/QMainWindow \
+	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtWidgets/QMessageBox \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtWidgets/QWidget \
+	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtWidgets/qdialog.h \
+	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtWidgets/qmainwindow.h \
+	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtWidgets/qmessagebox.h \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtWidgets/qsizepolicy.h \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtWidgets/qtabwidget.h \
 	/home/rokgeun/Qt/6.10.0/gcc_64/include/QtWidgets/qtwidgets-config.h \
@@ -428,6 +445,43 @@ MissileCommand_autogen/timestamp: \
 	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake \
 	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake \
 	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginAdditionalTargetInfo.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginConfig.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets-relwithdebinfo.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginAdditionalTargetInfo.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginConfig.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets-relwithdebinfo.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginAdditionalTargetInfo.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginConfig.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginTargets-relwithdebinfo.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginTargets.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QOCIDriverPluginAdditionalTargetInfo.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QOCIDriverPluginConfig.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QOCIDriverPluginTargets-relwithdebinfo.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QOCIDriverPluginTargets.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginAdditionalTargetInfo.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginConfig.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets-relwithdebinfo.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginAdditionalTargetInfo.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfig.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets-relwithdebinfo.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfig.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-relwithdebinfo.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlConfig.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlDependencies.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlPlugins.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlTargets-relwithdebinfo.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlTargets.cmake \
+	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlVersionlessAliasTargets.cmake \
 	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake \
 	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake \
 	/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake \
@@ -453,23 +507,35 @@ MissileCommand_autogen/timestamp: \
 	/home/rokgeun/QtProject/MissileCommand/build/Desktop_Qt_6_10_0-Debug/CMakeFiles/3.31.6/CMakeCXXCompiler.cmake \
 	/home/rokgeun/QtProject/MissileCommand/build/Desktop_Qt_6_10_0-Debug/CMakeFiles/3.31.6/CMakeSystem.cmake \
 	/home/rokgeun/QtProject/MissileCommand/build/Desktop_Qt_6_10_0-Debug/MissileCommand_autogen/moc_predefs.h \
-	/home/rokgeun/QtProject/MissileCommand/include/cannon.h \
-	/home/rokgeun/QtProject/MissileCommand/include/enemy.h \
-	/home/rokgeun/QtProject/MissileCommand/include/explosion.h \
-	/home/rokgeun/QtProject/MissileCommand/include/gamewidget.h \
-	/home/rokgeun/QtProject/MissileCommand/include/item.h \
-	/home/rokgeun/QtProject/MissileCommand/include/levelmanager.h \
+	/home/rokgeun/QtProject/MissileCommand/include/UI/loginwidget.h \
+	/home/rokgeun/QtProject/MissileCommand/include/UI/mainmenuwidget.h \
+	/home/rokgeun/QtProject/MissileCommand/include/UI/mypagewidget.h \
+	/home/rokgeun/QtProject/MissileCommand/include/UI/rankingwidget.h \
+	/home/rokgeun/QtProject/MissileCommand/include/UI/signupwidget.h \
+	/home/rokgeun/QtProject/MissileCommand/include/UI/widget.h \
+	/home/rokgeun/QtProject/MissileCommand/include/game/cannon.h \
+	/home/rokgeun/QtProject/MissileCommand/include/game/enemy.h \
+	/home/rokgeun/QtProject/MissileCommand/include/game/explosion.h \
+	/home/rokgeun/QtProject/MissileCommand/include/game/gamewidget.h \
+	/home/rokgeun/QtProject/MissileCommand/include/game/item.h \
+	/home/rokgeun/QtProject/MissileCommand/include/game/levelmanager.h \
+	/home/rokgeun/QtProject/MissileCommand/include/game/player.h \
 	/home/rokgeun/QtProject/MissileCommand/include/mainwindow.h \
-	/home/rokgeun/QtProject/MissileCommand/include/player.h \
-	/home/rokgeun/QtProject/MissileCommand/src/cannon.cpp \
-	/home/rokgeun/QtProject/MissileCommand/src/enemy.cpp \
-	/home/rokgeun/QtProject/MissileCommand/src/explosion.cpp \
-	/home/rokgeun/QtProject/MissileCommand/src/gamewidget.cpp \
-	/home/rokgeun/QtProject/MissileCommand/src/item.cpp \
-	/home/rokgeun/QtProject/MissileCommand/src/levelmanager.cpp \
+	/home/rokgeun/QtProject/MissileCommand/src/UI/loginwidget.cpp \
+	/home/rokgeun/QtProject/MissileCommand/src/UI/mainmenuwidget.cpp \
+	/home/rokgeun/QtProject/MissileCommand/src/UI/mypagewidget.cpp \
+	/home/rokgeun/QtProject/MissileCommand/src/UI/rankingwidget.cpp \
+	/home/rokgeun/QtProject/MissileCommand/src/UI/signupwidget.cpp \
+	/home/rokgeun/QtProject/MissileCommand/src/UI/widget.cpp \
+	/home/rokgeun/QtProject/MissileCommand/src/game/cannon.cpp \
+	/home/rokgeun/QtProject/MissileCommand/src/game/enemy.cpp \
+	/home/rokgeun/QtProject/MissileCommand/src/game/explosion.cpp \
+	/home/rokgeun/QtProject/MissileCommand/src/game/gamewidget.cpp \
+	/home/rokgeun/QtProject/MissileCommand/src/game/item.cpp \
+	/home/rokgeun/QtProject/MissileCommand/src/game/levelmanager.cpp \
+	/home/rokgeun/QtProject/MissileCommand/src/game/player.cpp \
 	/home/rokgeun/QtProject/MissileCommand/src/main.cpp \
 	/home/rokgeun/QtProject/MissileCommand/src/mainwindow.cpp \
-	/home/rokgeun/QtProject/MissileCommand/src/player.cpp \
 	/usr/include/alloca.h \
 	/usr/include/asm-generic/bitsperlong.h \
 	/usr/include/asm-generic/errno-base.h \

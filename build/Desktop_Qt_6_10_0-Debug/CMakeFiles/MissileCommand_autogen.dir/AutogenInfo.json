@@ -497,6 +497,136 @@
 		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicWindowsHelpers.cmake",
 		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
 		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/Qt6Dependencies.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersionImpl.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersion.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersionImpl.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersion.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersionImpl.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsDependencies.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsAdditionalTargetInfo.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsAdditionalTargetInfo.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlDependencies.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlTargets.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlTargets-relwithdebinfo.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlPlugins.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets-relwithdebinfo.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginAdditionalTargetInfo.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets-relwithdebinfo.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginAdditionalTargetInfo.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginTargets.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginTargets-relwithdebinfo.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginAdditionalTargetInfo.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QOCIDriverPluginConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QOCIDriverPluginTargets.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QOCIDriverPluginTargets-relwithdebinfo.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QOCIDriverPluginAdditionalTargetInfo.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets-relwithdebinfo.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginAdditionalTargetInfo.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets-relwithdebinfo.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginAdditionalTargetInfo.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-relwithdebinfo.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlVersionlessAliasTargets.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/Qt6Config.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicCMakeEarlyPolicyHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/Qt6ConfigExtras.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtInstallPaths.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/Qt6Targets.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/Qt6VersionlessAliasTargets.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtFeature.cmake",
+		"/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtFeatureCommon.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicAndroidHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicAppleHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicGitHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicPluginHelpers_v2.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicSbomAttributionHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicSbomCpeHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicSbomDepHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicSbomFileHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicSbomHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicSbomLicenseHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicSbomOpsHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicSbomPurlHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicSbomPythonHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicSbomQtEntityHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicSbomSystemDepHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicTargetHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicTestHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicToolHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/QtPublicWindowsHelpers.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/lib/cmake/Qt6/Qt6Dependencies.cmake",
 		"/usr/share/cmake/Modules/GNUInstallDirs.cmake",
 		"/home/rokgeun/QtProject/MissileCommand/assets.qrc"
 	],
@@ -507,39 +637,81 @@
 	"HEADERS" : 
 	[
 		[
-			"/home/rokgeun/QtProject/MissileCommand/include/cannon.h",
+			"/home/rokgeun/QtProject/MissileCommand/include/UI/loginwidget.h",
 			"MU",
-			"6YEA5652QU/moc_cannon.cpp",
+			"6RLD7RGVB7/moc_loginwidget.cpp",
 			null
 		],
 		[
-			"/home/rokgeun/QtProject/MissileCommand/include/enemy.h",
+			"/home/rokgeun/QtProject/MissileCommand/include/UI/mainmenuwidget.h",
 			"MU",
-			"6YEA5652QU/moc_enemy.cpp",
+			"6RLD7RGVB7/moc_mainmenuwidget.cpp",
 			null
 		],
 		[
-			"/home/rokgeun/QtProject/MissileCommand/include/explosion.h",
+			"/home/rokgeun/QtProject/MissileCommand/include/UI/mypagewidget.h",
 			"MU",
-			"6YEA5652QU/moc_explosion.cpp",
+			"6RLD7RGVB7/moc_mypagewidget.cpp",
 			null
 		],
 		[
-			"/home/rokgeun/QtProject/MissileCommand/include/gamewidget.h",
+			"/home/rokgeun/QtProject/MissileCommand/include/UI/rankingwidget.h",
 			"MU",
-			"6YEA5652QU/moc_gamewidget.cpp",
+			"6RLD7RGVB7/moc_rankingwidget.cpp",
 			null
 		],
 		[
-			"/home/rokgeun/QtProject/MissileCommand/include/item.h",
+			"/home/rokgeun/QtProject/MissileCommand/include/UI/signupwidget.h",
 			"MU",
-			"6YEA5652QU/moc_item.cpp",
+			"6RLD7RGVB7/moc_signupwidget.cpp",
 			null
 		],
 		[
-			"/home/rokgeun/QtProject/MissileCommand/include/levelmanager.h",
+			"/home/rokgeun/QtProject/MissileCommand/include/UI/widget.h",
 			"MU",
-			"6YEA5652QU/moc_levelmanager.cpp",
+			"6RLD7RGVB7/moc_widget.cpp",
+			null
+		],
+		[
+			"/home/rokgeun/QtProject/MissileCommand/include/game/cannon.h",
+			"MU",
+			"6SJZKF3T4A/moc_cannon.cpp",
+			null
+		],
+		[
+			"/home/rokgeun/QtProject/MissileCommand/include/game/enemy.h",
+			"MU",
+			"6SJZKF3T4A/moc_enemy.cpp",
+			null
+		],
+		[
+			"/home/rokgeun/QtProject/MissileCommand/include/game/explosion.h",
+			"MU",
+			"6SJZKF3T4A/moc_explosion.cpp",
+			null
+		],
+		[
+			"/home/rokgeun/QtProject/MissileCommand/include/game/gamewidget.h",
+			"MU",
+			"6SJZKF3T4A/moc_gamewidget.cpp",
+			null
+		],
+		[
+			"/home/rokgeun/QtProject/MissileCommand/include/game/item.h",
+			"MU",
+			"6SJZKF3T4A/moc_item.cpp",
+			null
+		],
+		[
+			"/home/rokgeun/QtProject/MissileCommand/include/game/levelmanager.h",
+			"MU",
+			"6SJZKF3T4A/moc_levelmanager.cpp",
+			null
+		],
+		[
+			"/home/rokgeun/QtProject/MissileCommand/include/game/player.h",
+			"MU",
+			"6SJZKF3T4A/moc_player.cpp",
 			null
 		],
 		[
@@ -547,18 +719,12 @@
 			"MU",
 			"6YEA5652QU/moc_mainwindow.cpp",
 			null
-		],
-		[
-			"/home/rokgeun/QtProject/MissileCommand/include/player.h",
-			"MU",
-			"6YEA5652QU/moc_player.cpp",
-			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "/home/rokgeun/QtProject/MissileCommand/build/Desktop_Qt_6_10_0-Debug/MissileCommand_autogen/include",
 	"MOC_COMPILATION_FILE" : "/home/rokgeun/QtProject/MissileCommand/build/Desktop_Qt_6_10_0-Debug/MissileCommand_autogen/mocs_compilation.cpp",
-	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
+	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_SQL_LIB", "QT_WIDGETS_LIB" ],
 	"MOC_DEPEND_FILTERS" : 
 	[
 		[
@@ -574,6 +740,7 @@
 		"/home/rokgeun/Qt/6.10.0/gcc_64/mkspecs/linux-g++",
 		"/home/rokgeun/Qt/6.10.0/gcc_64/include/QtWidgets",
 		"/home/rokgeun/Qt/6.10.0/gcc_64/include/QtGui",
+		"/home/rokgeun/Qt/6.10.0/gcc_64/include/QtSql",
 		"/usr/include",
 		"/usr/include/c++/15",
 		"/usr/include/c++/15/x86_64-redhat-linux",
@@ -614,21 +781,68 @@
 	"SETTINGS_FILE" : "/home/rokgeun/QtProject/MissileCommand/build/Desktop_Qt_6_10_0-Debug/CMakeFiles/MissileCommand_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "/home/rokgeun/QtProject/MissileCommand/src/cannon.cpp", "MU", null ],
-		[ "/home/rokgeun/QtProject/MissileCommand/src/enemy.cpp", "MU", null ],
 		[
-			"/home/rokgeun/QtProject/MissileCommand/src/explosion.cpp",
+			"/home/rokgeun/QtProject/MissileCommand/src/UI/loginwidget.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/rokgeun/QtProject/MissileCommand/src/gamewidget.cpp",
+			"/home/rokgeun/QtProject/MissileCommand/src/UI/mainmenuwidget.cpp",
 			"MU",
 			null
 		],
-		[ "/home/rokgeun/QtProject/MissileCommand/src/item.cpp", "MU", null ],
 		[
-			"/home/rokgeun/QtProject/MissileCommand/src/levelmanager.cpp",
+			"/home/rokgeun/QtProject/MissileCommand/src/UI/mypagewidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/rokgeun/QtProject/MissileCommand/src/UI/rankingwidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/rokgeun/QtProject/MissileCommand/src/UI/signupwidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/rokgeun/QtProject/MissileCommand/src/UI/widget.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/rokgeun/QtProject/MissileCommand/src/game/cannon.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/rokgeun/QtProject/MissileCommand/src/game/enemy.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/rokgeun/QtProject/MissileCommand/src/game/explosion.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/rokgeun/QtProject/MissileCommand/src/game/gamewidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/rokgeun/QtProject/MissileCommand/src/game/item.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/rokgeun/QtProject/MissileCommand/src/game/levelmanager.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/rokgeun/QtProject/MissileCommand/src/game/player.cpp",
 			"MU",
 			null
 		],
@@ -637,8 +851,7 @@
 			"/home/rokgeun/QtProject/MissileCommand/src/mainwindow.cpp",
 			"MU",
 			null
-		],
-		[ "/home/rokgeun/QtProject/MissileCommand/src/player.cpp", "MU", null ]
+		]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [ "/home/rokgeun/QtProject/MissileCommand" ],
